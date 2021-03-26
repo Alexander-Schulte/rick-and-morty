@@ -1,5 +1,22 @@
 export function getCharacter() {
-  const url = "https://rickandmortyapi.com/api/character/";
+  let url;
+  const filter = document.querySelector(".header__filter");
+  const status = filter.value;
+  const inputName = document.querySelector(".header__search-form");
+  const searchName = inputName.value;
+
+  if (status == "Alive") {
+    url = `https://rickandmortyapi.com/api/character?name=${searchName}&status=alive`;
+  } else if (status == "Dead") {
+    url = `https://rickandmortyapi.com/api/character?name=${searchName}&status=dead`;
+  } else if (status == "Unknown") {
+    url = `https://rickandmortyapi.com/api/character?name=${searchName}&status=unknown`;
+  } else if (status == "All") {
+    url = `https://rickandmortyapi.com/api/character?name=${searchName}`;
+  }
+
+  console.log(url);
+
   fetch(url)
     .then((response) => {
       if (response.ok) {
@@ -10,9 +27,9 @@ export function getCharacter() {
     })
     .then((dataObject) =>
       dataObject.results.forEach((character) => {
+        const main = document.querySelector("main");
         const section = document.createElement("section");
         section.classList.add("character");
-        const main = document.querySelector("main");
         const fullName = document.createElement("h2");
         fullName.classList.add("fullName");
         fullName.textContent = `${character.name}`;
@@ -21,9 +38,22 @@ export function getCharacter() {
         img.src = character.image;
         img.alt = `$(character.name)`;
 
+        if (character.status === "Alive") {
+          section.style.backgroundColor = "green";
+        } else if (character.status === "Dead") {
+          section.style.backgroundColor = "red";
+        } else if (character.status === "unknown") {
+          section.style.backgroundColor = "yellow";
+        }
+
         section.append(fullName);
         section.append(img);
         main.append(section);
       })
     );
+}
+
+export function clearcharacters() {
+  const characterSection = document.querySelectorAll("section");
+  characterSection.forEach((section) => section.remove());
 }
