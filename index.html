@@ -7,11 +7,34 @@
     <link rel="stylesheet" href="/src/styles/index.css" />
     <title>Vite App</title>
   </head>
-  <body>
-    <header>
-      <h1>Hello World</h1>
+  <body class="grid-layout">
+    <header class="grid-header">
+      <img
+        class="header__img"
+        src="https://rickandmortyapi.com/api/character/avatar/19.jpeg"
+        alt="$(character.name)"
+      />
+
+      <div class="header__search">
+        <select class="header__filter" name="status" id="status">
+          <option value="not-completed" selected>Dead</option>
+          <option value="completed">Alive</option>
+          <option value="completed">Unknown</option>
+          <option value="all">All</option>
+        </select>
+        <input
+          type="search"
+          class="header__search-form"
+          placeholder="Character name..."
+        />
+      </div>
+
+      <button type="button" class="header__search-button">
+        Show Characters!
+      </button>
     </header>
-    <div id="app"></div>
+    <main class="grid-main"></main>
+    <footer class="grid-footer"></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
