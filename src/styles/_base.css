@@ -23,7 +23,7 @@ html {
   grid-row: header;
   grid-column: width;
   display: flex;
-  background-color: blue;
+  background-color: var(--header-footer-color);
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
@@ -64,6 +64,7 @@ html {
   align-items: center;
   font-size: 17px;
   overflow-y: scroll;
+  background-color: var(--content-background-color);
   margin-bottom: 10px;
   padding-top: 10px;
 }
@@ -97,7 +98,7 @@ html {
   grid-column: width;
   display: flex;
   flex-direction: row;
-  background-color: red;
+  background-color: var(--header-footer-color);
   font-size: 30px;
   justify-content: space-around;
   align-items: center;

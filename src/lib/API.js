@@ -39,11 +39,11 @@ export function getCharacter() {
         img.alt = `$(character.name)`;
 
         if (character.status === "Alive") {
-          section.style.backgroundColor = "green";
+          section.style.backgroundColor = "#70592d";
         } else if (character.status === "Dead") {
-          section.style.backgroundColor = "red";
+          section.style.backgroundColor = "#f8bd91";
         } else if (character.status === "unknown") {
-          section.style.backgroundColor = "yellow";
+          section.style.backgroundColor = "#f7f07b";
         }
 
         section.append(fullName);
