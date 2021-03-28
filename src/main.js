@@ -8,11 +8,3 @@ button.addEventListener("click", () => {
   clearcharacters();
   getCharacter();
 });
-
-const form = document.querySelector("form");
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  clearCharacters();
-  createCharacter();
-});
