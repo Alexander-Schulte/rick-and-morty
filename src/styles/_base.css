@@ -97,9 +97,8 @@ html {
   grid-row: footer;
   grid-column: width;
   display: flex;
-  flex-direction: row;
   background-color: var(--header-footer-color);
-  font-size: 30px;
+  font-size: 14px;
   justify-content: space-around;
   align-items: center;
 }
