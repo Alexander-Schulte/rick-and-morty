@@ -1,3 +1,9 @@
 :root {
   /* Define your variable colors here */
+
+  --header-footer-color: #3a4767;
+  --content-background-color: #ededee;
+  --section-alive-color: #70592d;
+  --section-dead-color: #f8bd91;
+  --section-unknown-color: #f7f07b;
 }
